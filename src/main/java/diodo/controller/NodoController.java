@@ -36,6 +36,7 @@ public class NodoController {
             activarAmbosBotonesAdd();
             activarAmbosBotonesBorrar();
         }
+        System.out.println(nodo.toString());
     }
 
 

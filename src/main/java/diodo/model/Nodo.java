@@ -1,15 +1,12 @@
 package diodo.model;
 
-import java.util.Deque;
-import java.util.LinkedList;
-
 public class Nodo<T> {
-    private final Deque<T> left;
-    private final Deque<T> right;
+    private final Stack<T> left;
+    private final Stack<T> right;
 
     public Nodo() {
-        this.left = new LinkedList<>();
-        this.right = new LinkedList<>();
+        this.left = new Stack<>();
+        this.right = new Stack<>();
     }
 
     public void agregarDerecha(T item) {
@@ -33,13 +30,13 @@ public class Nodo<T> {
     }
 
     public T removerIzquierda() {
-        T t = left.pollLast();
+        T t = left.pop();
         System.out.println(left);
         return t;
     }
 
     public T removerDerecha(){
-        T t = right.pollLast();
+        T t = right.pop();
         System.out.println(right);
         return t;
     }
@@ -48,5 +45,10 @@ public class Nodo<T> {
         int leftSize = left.size();
         int rightSize = right.size();
         return leftSize == rightSize;
+    }
+
+    @Override
+    public String toString() {
+        return left + ", " + right;
     }
 }
