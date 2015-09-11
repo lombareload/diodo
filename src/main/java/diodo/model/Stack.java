@@ -8,6 +8,9 @@ public class Stack<T> {
     }
 
     public T pop(){
+        if(tail.getNext()==null){
+            return null;
+        }
         T current = tail.getValue();
         tail = tail.getNext();
         return current;
